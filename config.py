@@ -1,6 +1,6 @@
 import os
 
-TELEGRAM_TOKEN = os.getenv("TELEGRAM_TOKEN")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
 TMDB_API_KEY = os.getenv("TMDB_API_KEY")
 OMDB_KEYS = os.getenv("OMDB_KEYS", "").split(",")
 
