@@ -1,12 +1,12 @@
 from aiogram import Bot, Dispatcher, types
-from config import TELEGRAM_TOKEN
+from config import BOT_TOKEN
 from engine.resolver import resolve
 from engine.fallback import manual
 from render.compose import compose
 from PIL import Image
 import io
 
-bot = Bot(token=TELEGRAM_TOKEN)
+bot = Bot(token=BOT_TOKEN)
 dp = Dispatcher()
 cache = {}
 
