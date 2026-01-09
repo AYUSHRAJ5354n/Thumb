@@ -1,17 +1,15 @@
 import asyncio
+import threading
 import uvicorn
 from bot import dp, bot
 from server import app
 
-async def start_bot():
-    await dp.start_polling(bot)
-
-def start_server():
+def run_api():
     uvicorn.run(app, host="0.0.0.0", port=8000)
 
-async def main():
-    loop = asyncio.get_event_loop()
-    loop.create_task(start_bot())
-    start_server()
+async def run_bot():
+    await dp.start_polling(bot)
 
-asyncio.run(main())
+if __name__ == "__main__":
+    threading.Thread(target=run_api, daemon=True).start()
+    asyncio.run(run_bot())
